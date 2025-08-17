@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Vista - Modern American Cuisine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h1 class="logo__text">Bella Vista</h1>
+                    <p class="logo__tagline">Modern American Cuisine</p>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav__content">
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <input type="text" id="search" class="search-input" placeholder="Search menu items...">
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <!-- Category Navigation -->
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">All Items</button>
+                    <button class="category-btn" data-category="appetizers">🥗 Appetizers</button>
+                    <button class="category-btn" data-category="mains">🍽️ Main Courses</button>
+                    <button class="category-btn" data-category="desserts">🍰 Desserts</button>
+                    <button class="category-btn" data-category="beverages">🥤 Beverages</button>
+                </div>
+
+                <!-- Dietary Filters -->
+                <div class="dietary-filters">
+                    <button class="dietary-btn" data-dietary="vegetarian">🌱 Vegetarian</button>
+                    <button class="dietary-btn" data-dietary="vegan">🌿 Vegan</button>
+                    <button class="dietary-btn" data-dietary="gluten-free">🌾 Gluten-Free</button>
+                    <button class="dietary-btn" data-dietary="all">Clear Filters</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <!-- Menu Grid -->
+            <div class="menu-grid" id="menu-grid">
+                <!-- Menu items will be dynamically populated by JavaScript -->
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results hidden" id="no-results">
+                <h3>No items found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3>Bella Vista</h3>
+                    <p>An upscale casual dining experience featuring modern American cuisine crafted with the finest ingredients.</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Contact</h4>
+                    <p>📍 123 Culinary Street<br>Downtown District<br>📞 (555) 123-4567</p>
+                </div>
+                <div class="footer__section">
+                    <h4>Hours</h4>
+                    <p>Mon-Thu: 5:00 PM - 10:00 PM<br>Fri-Sat: 5:00 PM - 11:00 PM<br>Sun: 4:00 PM - 9:00 PM</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
