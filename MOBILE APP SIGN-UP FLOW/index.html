@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Signup Flow Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Landing Page -->
+        <div id="landing-page" class="screen active">
+            <div class="landing-content">
+                <div class="hero-section">
+                    <h1>📱 Mobile App Signup Flow</h1>
+                    <p class="hero-subtitle">Experience best practices in mobile signup design with this interactive demo</p>
+                </div>
+                
+                <div class="principles-section">
+                    <h2>Key Design Principles</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <div class="principle-icon">⚡</div>
+                            <h3>Short and Sweet</h3>
+                            <p>Users are more likely to complete a signup flow if it is short and easy to follow</p>
+                            <div class="principle-stat">50% higher conversion with single-field forms</div>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">👤</div>
+                            <h3>Personalized</h3>
+                            <p>The more personalized the signup flow is, the more likely users are to complete it</p>
+                            <div class="principle-stat">20-40% increase with social login personalization</div>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">🎯</div>
+                            <h3>Useful</h3>
+                            <p>The signup flow should collect necessary information but not ask for too much</p>
+                            <div class="principle-stat">37% fewer abandonments with optional phone fields</div>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">✅</div>
+                            <h3>Error-free</h3>
+                            <p>The signup flow should be free of errors so users don't have to repeat the process</p>
+                            <div class="principle-stat">15% reduction in abandonment with progress indicators</div>
+                        </div>
+                        <div class="principle-card">
+                            <div class="principle-icon">🔒</div>
+                            <h3>Secure</h3>
+                            <p>The signup flow should be secure so users' personal information is protected</p>
+                            <div class="principle-stat">35% higher completion with mobile optimization</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conversion-chart">
+                    <h3>Conversion Rate Improvements</h3>
+                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/c1fd3782f16276fb2ce730d1aa58a232/72dd7869-3ec5-46df-b70d-0c21ce0032e7/3b0bbf34.png" alt="Mobile signup conversion improvements chart" class="chart-image">
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn btn--primary btn--lg" id="start-demo">
+                        Start Interactive Demo
+                    </button>
+                    <p class="demo-note">Experience the flow from a user's perspective</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile App Frame -->
+        <div id="mobile-frame" class="screen">
+            <div class="phone-frame">
+                <div class="phone-header">
+                    <div class="phone-controls">
+                        <div class="phone-time">9:41</div>
+                        <div class="phone-signal">📶 🔋</div>
+                    </div>
+                </div>
+                
+                <div class="phone-content" id="phone-content">
+                    <!-- Step 1: Email Input -->
+                    <div id="step-1" class="step-screen active">
+                        <div class="step-header">
+                            <button class="back-btn" id="back-to-landing" aria-label="Back to landing">‹</button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="step-indicator">1 of 4</span>
+                            </div>
+                        </div>
+
+                        <div class="step-content">
+                            <h2>Welcome!</h2>
+                            <p class="step-subtitle">Let's create your account</p>
+                            
+                            <div class="tooltip" id="email-tooltip">
+                                <div class="tooltip-icon">💡</div>
+                                <div class="tooltip-text">Starting with just email reduces friction and improves conversion by 50%</div>
+                            </div>
+
+                            <form class="signup-form" id="email-form">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        class="form-control" 
+                                        placeholder="your@email.com"
+                                        required
+                                    >
+                                    <div class="field-feedback" id="email-feedback"></div>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--lg btn--full-width" disabled>
+                                    Continue
+                                </button>
+                            </form>
+
+                            <div class="social-login">
+                                <div class="divider">
+                                    <span class="divider-text">Or continue with</span>
+                                </div>
+                                <div class="social-buttons">
+                                    <button type="button" class="social-btn google-btn" id="google-login">
+                                        <div class="social-icon">G</div>
+                                        Google
+                                    </button>
+                                    <button type="button" class="social-btn apple-btn" id="apple-login">
+                                        <div class="social-icon">🍎</div>
+                                        Apple
+                                    </button>
+                                    <button type="button" class="social-btn facebook-btn" id="facebook-login">
+                                        <div class="social-icon">f</div>
+                                        Facebook
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Password Creation -->
+                    <div id="step-2" class="step-screen">
+                        <div class="step-header">
+                            <button class="back-btn" id="back-to-step-1" aria-label="Back to step 1">‹</button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 50%"></div>
+                                </div>
+                                <span class="step-indicator">2 of 4</span>
+                            </div>
+                        </div>
+
+                        <div class="step-content">
+                            <h2>Secure your account</h2>
+                            <p class="step-subtitle">Create a strong password</p>
+
+                            <div class="tooltip" id="password-tooltip">
+                                <div class="tooltip-icon">🔒</div>
+                                <div class="tooltip-text">Real-time password strength feedback improves security and user confidence</div>
+                            </div>
+
+                            <form class="signup-form" id="password-form">
+                                <div class="form-group">
+                                    <label for="password" class="form-label">Password</label>
+                                    <div class="password-input-container">
+                                        <input 
+                                            type="password" 
+                                            id="password" 
+                                            class="form-control" 
+                                            placeholder="Enter your password"
+                                            required
+                                        >
+                                        <button type="button" class="password-toggle" id="password-toggle" aria-label="Toggle password visibility">
+                                            <span class="toggle-icon">👁️</span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="password-strength" id="password-strength">
+                                        <div class="strength-bar">
+                                            <div class="strength-fill" id="strength-fill"></div>
+                                        </div>
+                                        <span class="strength-text" id="strength-text">Password strength</span>
+                                    </div>
+
+                                    <div class="password-requirements">
+                                        <div class="requirement" id="req-length">
+                                            <span class="req-icon">○</span>
+                                            At least 8 characters
+                                        </div>
+                                        <div class="requirement" id="req-uppercase">
+                                            <span class="req-icon">○</span>
+                                            One uppercase letter
+                                        </div>
+                                        <div class="requirement" id="req-number">
+                                            <span class="req-icon">○</span>
+                                            One number
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn--primary btn--lg btn--full-width" disabled>
+                                    Continue
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Personal Details -->
+                    <div id="step-3" class="step-screen">
+                        <div class="step-header">
+                            <button class="back-btn" id="back-to-step-2" aria-label="Back to step 2">‹</button>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                                <span class="step-indicator">3 of 4</span>
+                            </div>
+                        </div>
+
+                        <div class="step-content">
+                            <h2>Personalize your experience</h2>
+                            <p class="step-subtitle">Help us customize the app for you <span class="optional-badge">Optional</span></p>
+
+                            <div class="tooltip" id="personalization-tooltip">
+                                <div class="tooltip-icon">👤</div>
+                                <div class="tooltip-text">Progressive profiling reduces abandonment while enabling personalization</div>
+                            </div>
+
+                            <form class="signup-form" id="details-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">First name</label>
+                                        <input 
+                                            type="text" 
+                                            id="firstName" 
+                                            class="form-control" 
+                                            placeholder="John"
+                                        >
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">Last name</label>
+                                        <input 
+                                            type="text" 
+                                            id="lastName" 
+                                            class="form-control" 
+                                            placeholder="Doe"
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="interests" class="form-label">What interests you most?</label>
+                                    <select id="interests" class="form-control">
+                                        <option value="">Select your interest...</option>
+                                        <option value="fitness">Fitness & Health</option>
+                                        <option value="productivity">Productivity</option>
+                                        <option value="entertainment">Entertainment</option>
+                                        <option value="learning">Learning & Education</option>
+                                        <option value="social">Social & Communication</option>
+                                    </select>
+                                </div>
+
+                                <div class="button-group">
+                                    <button type="button" class="btn btn--outline btn--lg" id="skip-details">
+                                        Skip for now
+                                    </button>
+                                    <button type="submit" class="btn btn--primary btn--lg">
+                                        Continue
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Success -->
+                    <div id="step-4" class="step-screen">
+                        <div class="step-header">
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <span class="step-indicator">Complete!</span>
+                            </div>
+                        </div>
+
+                        <div class="step-content success-content">
+                            <div class="success-animation">
+                                <div class="success-icon">✅</div>
+                                <div class="success-confetti">🎉</div>
+                            </div>
+                            
+                            <h2 id="welcome-message">Welcome aboard!</h2>
+                            <p class="step-subtitle">Your account has been created successfully</p>
+
+                            <div class="user-summary" id="user-summary">
+                                <div class="summary-card">
+                                    <h4>Account Details</h4>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Email:</span>
+                                        <span class="summary-value" id="summary-email">-</span>
+                                    </div>
+                                    <div class="summary-item" id="summary-name-container" style="display: none;">
+                                        <span class="summary-label">Name:</span>
+                                        <span class="summary-value" id="summary-name">-</span>
+                                    </div>
+                                    <div class="summary-item" id="summary-interest-container" style="display: none;">
+                                        <span class="summary-label">Interest:</span>
+                                        <span class="summary-value" id="summary-interest">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button class="btn btn--primary btn--lg btn--full-width" id="get-started">
+                                    Start Using App
+                                </button>
+                                <button class="btn btn--outline btn--lg btn--full-width" id="view-insights">
+                                    View Design Insights
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Demo Controls -->
+            <div class="demo-controls">
+                <button class="btn btn--secondary" id="restart-demo">🔄 Restart Demo</button>
+                <button class="btn btn--secondary" id="test-errors">⚠️ Test Error States</button>
+            </div>
+        </div>
+
+        <!-- Design Insights Page -->
+        <div id="insights-page" class="screen">
+            <div class="insights-content">
+                <div class="insights-header">
+                    <button class="back-btn" id="back-from-insights">‹ Back</button>
+                    <h1>Design Insights</h1>
+                </div>
+
+                <div class="insights-section">
+                    <h2>What Made This Flow Effective</h2>
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h3>Progressive Disclosure</h3>
+                            <p>We started with just email, then gradually requested more information. This reduces cognitive load and improves completion rates.</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Real-time Validation</h3>
+                            <p>Immediate feedback prevents errors and gives users confidence they're filling out the form correctly.</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Clear Progress</h3>
+                            <p>The progress bar and step indicators help users understand where they are and how much is left to complete.</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Social Login Options</h3>
+                            <p>Providing alternative signup methods accommodates different user preferences and can reduce friction.</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Optional Information</h3>
+                            <p>Clearly marking optional fields and providing skip options prevents abandonment while still collecting useful data.</p>
+                        </div>
+                        <div class="insight-card">
+                            <h3>Mobile Optimization</h3>
+                            <p>Touch-friendly buttons, appropriate input types, and mobile-first design ensure a smooth experience on all devices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="best-practices">
+                    <h3>Key Best Practices Applied</h3>
+                    <ul class="practices-list">
+                        <li>✅ Minimal fields initially (just email)</li>
+                        <li>✅ Social login options provided</li>
+                        <li>✅ Clear progress indicators shown</li>
+                        <li>✅ Real-time validation implemented</li>
+                        <li>✅ Mobile-first responsive design</li>
+                        <li>✅ Security indicators displayed</li>
+                        <li>✅ Progressive profiling approach used</li>
+                        <li>✅ Skip options for non-essential fields</li>
+                    </ul>
+                </div>
+
+                <div class="action-section">
+                    <button class="btn btn--primary btn--lg" id="try-again-from-insights">
+                        Try the Demo Again
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay hidden" id="loading-overlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text" id="loading-text">Creating your account...</p>
+            </div>
+        </div>
+
+        <!-- Error Modal -->
+        <div class="modal hidden" id="error-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Demo: Error State</h3>
+                    <button class="modal-close" id="close-error-modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>This demonstrates how errors should be handled gracefully in a signup flow:</p>
+                    <div class="error-examples">
+                        <div class="error-item">
+                            <span class="error-type">Network Error:</span>
+                            <span class="error-message">"Please check your internet connection and try again."</span>
+                        </div>
+                        <div class="error-item">
+                            <span class="error-type">Email Taken:</span>
+                            <span class="error-message">"This email is already registered. Would you like to sign in instead?"</span>
+                        </div>
+                        <div class="error-item">
+                            <span class="error-type">Weak Password:</span>
+                            <span class="error-message">"Please choose a stronger password that meets our security requirements."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn--primary" id="close-error-modal-btn">Got it</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
