@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Email Template Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <div class="brand">
+                <h1>Email Builder Pro</h1>
+                <span class="version">2025 Edition</span>
+            </div>
+            <nav class="header-nav">
+                <button class="btn btn--outline btn--sm" id="previewToggle">
+                    <span id="previewMode">Desktop</span> Preview
+                </button>
+                <button class="btn btn--primary btn--sm" id="exportBtn">
+                    Export Template
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Application -->
+    <main class="app-main">
+        <!-- Left Sidebar -->
+        <aside class="sidebar sidebar--left">
+            <!-- Template Gallery -->
+            <section class="template-section">
+                <h3>Email Templates</h3>
+                <div class="template-grid" id="templateGrid">
+                    <!-- Templates will be loaded here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Customization Panel -->
+            <section class="customization-panel">
+                <div class="panel-tabs">
+                    <button class="tab-btn active" data-tab="content">Content</button>
+                    <button class="tab-btn" data-tab="design">Design</button>
+                    <button class="tab-btn" data-tab="layout">Layout</button>
+                </div>
+
+                <!-- Content Tab -->
+                <div class="tab-content active" id="contentTab">
+                    <div class="form-group">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" value="Your Company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Headline</label>
+                        <input type="text" class="form-control" id="headline" value="Welcome to Our Newsletter!">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Sub-headline</label>
+                        <input type="text" class="form-control" id="subHeadline" value="Stay updated with our latest news and offers">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Body Text</label>
+                        <textarea class="form-control" id="bodyText" rows="4">Thank you for subscribing to our newsletter. We're excited to share valuable insights, exclusive offers, and important updates with you.</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">CTA Button Text</label>
+                        <input type="text" class="form-control" id="ctaText" value="Get Started">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">CTA Link</label>
+                        <input type="url" class="form-control" id="ctaLink" value="#" placeholder="https://example.com">
+                    </div>
+                </div>
+
+                <!-- Design Tab -->
+                <div class="tab-content" id="designTab">
+                    <div class="form-group">
+                        <label class="form-label">Primary Color</label>
+                        <input type="color" class="form-control color-input" id="primaryColor" value="#3743db">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Secondary Color</label>
+                        <input type="color" class="form-control color-input" id="secondaryColor" value="#1f2937">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Accent Color</label>
+                        <input type="color" class="form-control color-input" id="accentColor" value="#10b981">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Font Family</label>
+                        <select class="form-control" id="fontFamily">
+                            <option value="Arial, sans-serif">Arial</option>
+                            <option value="Helvetica, sans-serif">Helvetica</option>
+                            <option value="Georgia, serif">Georgia</option>
+                            <option value="Times New Roman, serif">Times New Roman</option>
+                            <option value="Verdana, sans-serif">Verdana</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Font Size</label>
+                        <input type="range" class="form-control" id="fontSize" min="12" max="24" value="16">
+                        <span class="range-value">16px</span>
+                    </div>
+                </div>
+
+                <!-- Layout Tab -->
+                <div class="tab-content" id="layoutTab">
+                    <div class="form-group">
+                        <label class="form-label">Max Width</label>
+                        <select class="form-control" id="maxWidth">
+                            <option value="480">Mobile (480px)</option>
+                            <option value="600" selected>Standard (600px)</option>
+                            <option value="800">Wide (800px)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Column Layout</label>
+                        <select class="form-control" id="columnLayout">
+                            <option value="single">Single Column</option>
+                            <option value="two">Two Columns</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Spacing</label>
+                        <input type="range" class="form-control" id="spacing" min="10" max="40" value="20">
+                        <span class="range-value">20px</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <!-- Preview Area -->
+        <section class="preview-area">
+            <div class="preview-header">
+                <h3>Email Preview</h3>
+                <div class="device-controls">
+                    <button class="device-btn active" data-device="desktop">
+                        <span>Desktop</span>
+                        <small>600px</small>
+                    </button>
+                    <button class="device-btn" data-device="tablet">
+                        <span>Tablet</span>
+                        <small>480px</small>
+                    </button>
+                    <button class="device-btn" data-device="mobile">
+                        <span>Mobile</span>
+                        <small>320px</small>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-container" id="previewContainer">
+                <div class="email-preview desktop-view" id="emailPreview">
+                    <!-- Email template will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar sidebar--right">
+            <section class="export-section">
+                <h3>Export Options</h3>
+                
+                <div class="export-options">
+                    <button class="btn btn--outline btn--full-width" id="exportHTML">
+                        <span>📄</span>
+                        Export HTML
+                    </button>
+                    
+                    <button class="btn btn--outline btn--full-width" id="copyHTML">
+                        <span>📋</span>
+                        Copy to Clipboard
+                    </button>
+                    
+                    <button class="btn btn--outline btn--full-width" id="exportMailchimp">
+                        <span>🐵</span>
+                        Mailchimp Format
+                    </button>
+                    
+                    <button class="btn btn--outline btn--full-width" id="exportPlainText">
+                        <span>📝</span>
+                        Plain Text Version
+                    </button>
+                </div>
+            </section>
+
+            <section class="help-section">
+                <h3>Best Practices</h3>
+                <div class="tips">
+                    <div class="tip">
+                        <strong>Subject Lines:</strong> Keep under 50 characters for mobile
+                    </div>
+                    <div class="tip">
+                        <strong>Images:</strong> Always include alt text for accessibility
+                    </div>
+                    <div class="tip">
+                        <strong>CTAs:</strong> Use contrasting colors and clear action words
+                    </div>
+                    <div class="tip">
+                        <strong>Testing:</strong> Preview on multiple email clients before sending
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Email Builder Pro. Professional email templates made simple.</p>
+            <div class="footer-links">
+                <a href="#" target="_blank">Documentation</a>
+                <a href="#" target="_blank">Support</a>
+                <a href="#" target="_blank">API</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Export Modal -->
+    <div class="modal hidden" id="exportModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Export Email Template</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <textarea class="form-control" id="exportCode" rows="15" readonly></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--secondary" id="closeModalBtn">Close</button>
+                <button class="btn btn--primary" id="downloadHTML">Download HTML</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
